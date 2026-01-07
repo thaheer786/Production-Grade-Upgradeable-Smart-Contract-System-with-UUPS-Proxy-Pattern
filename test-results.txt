@@ -1,0 +1,37 @@
+
+
+  Security
+    ✔ should prevent direct initialization of implementation contracts (543ms)
+    ✔ should prevent unauthorized upgrades (304ms)
+    ✔ should use storage gaps for future upgrades
+    ✔ should not have storage layout collisions across versions (110ms)
+    ✔ should prevent function selector clashing (49ms)
+
+  TokenVaultV1
+    ✔ should initialize with correct parameters
+    ✔ should allow deposits and update balances
+    ✔ should deduct deposit fee correctly
+    ✔ should allow withdrawals and update balances
+    ✔ should prevent withdrawal of more than balance
+    ✔ should prevent reinitialization
+
+  Upgrade V1 to V2
+    ✔ should preserve user balances after upgrade
+    ✔ should preserve total deposits after upgrade
+    ✔ should maintain admin access control after upgrade
+    ✔ should allow setting yield rate in V2
+    ✔ should calculate yield correctly
+    ✔ should prevent non-admin from setting yield rate
+    ✔ should allow pausing deposits in V2
+
+  Upgrade V2 to V3
+    ✔ should preserve all V2 state after upgrade
+    ✔ should allow setting withdrawal delay
+    ✔ should handle withdrawal requests correctly
+    ✔ should enforce withdrawal delay
+    ✔ should allow emergency withdrawals
+    ✔ should prevent premature withdrawal execution
+
+
+  24 passing (2s)
+

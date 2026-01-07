@@ -1,0 +1,55 @@
+submission:
+  name: TokenVault UUPS Upgradeable System
+  version: 1.0.0
+  author: Development Team
+  description: Production-grade upgradeable TokenVault protocol implementing UUPS pattern with V1→V2→V3 upgrade lifecycle, including storage layout management, secure initialization, role-based access control, yield accrual, pause controls, and withdrawal delays.
+
+setup:
+  - npm install
+  - npx hardhat compile
+
+test:
+  - npx hardhat test
+
+verify:
+  - npx hardhat test --reporter json > test-report.json
+  - npx hardhat test
+
+artifacts:
+  contracts:
+    - contracts/TokenVaultV1.sol
+    - contracts/TokenVaultV2.sol
+    - contracts/TokenVaultV3.sol
+    - contracts/mocks/MockERC20.sol
+  tests:
+    - test/TokenVaultV1.test.js
+    - test/upgrade-v1-to-v2.test.js
+    - test/upgrade-v2-to-v3.test.js
+    - test/security.test.js
+  scripts:
+    - scripts/deploy-v1.js
+    - scripts/upgrade-to-v2.js
+    - scripts/upgrade-to-v3.js
+
+requirements:
+  - Node.js v16+
+  - npm v8+
+  - Hardhat 2.22.5+
+  - OpenZeppelin Contracts 5.0.1+
+  - OpenZeppelin Contracts Upgradeable 5.0.1+
+  - OpenZeppelin Hardhat Upgrades 3.0.0+
+
+test-coverage:
+  minimum: "90%"
+  target: "100%"
+  files:
+    - contracts/TokenVaultV1.sol
+    - contracts/TokenVaultV2.sol
+    - contracts/TokenVaultV3.sol
+
+security-checks:
+  - initialization-safety
+  - unauthorized-upgrade-prevention
+  - storage-collision-detection
+  - access-control-enforcement
+  - function-selector-uniqueness
