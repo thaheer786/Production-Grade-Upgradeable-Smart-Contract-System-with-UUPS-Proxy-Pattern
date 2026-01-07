@@ -38,3 +38,9 @@ build/
 
 # Test coverage
 .nyc_output/
+
+# Exclude documentation .md files (keep only README.md, test-results.txt, and TEST_RESULTS_SUMMARY.md)
+VERIFICATION_CHECKLIST.md
+DESIGN_QUESTIONNAIRE.md
+SUBMISSION_GUIDE.md
+SUBMISSION_SUMMARY.md
