@@ -1,6 +1,9 @@
 const { expect } = require("chai");
 const { ethers, upgrades } = require("hardhat");
 
+// Import chai matchers manually
+require("@nomicfoundation/hardhat-chai-matchers");
+
 describe("Upgrade V2 to V3", function () {
   let token, vault, admin, user;
 
@@ -71,7 +74,8 @@ describe("Upgrade V2 to V3", function () {
     const tx = await vault.connect(user).emergencyWithdraw();
     await tx.wait();
     expect(await vault.balanceOf(user.address)).to.equal(0n);
-    expect(await token.balanceOf(user.address)).to.be.gte(ethers.parseEther("10000") - ethers.parseEther("50"));
+    const userBalance = await token.balanceOf(user.address);
+    expect(userBalance).to.be.gte(ethers.parseEther("10000") - ethers.parseEther("50"));
     expect(await vault.totalDeposits()).to.equal(0n);
   });
 

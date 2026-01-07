@@ -1,6 +1,9 @@
 const { expect } = require("chai");
 const { ethers, upgrades } = require("hardhat");
 
+// Import chai matchers manually
+require("@nomicfoundation/hardhat-chai-matchers");
+
 describe("TokenVaultV1", function () {
   let token, vault, admin, user;
 

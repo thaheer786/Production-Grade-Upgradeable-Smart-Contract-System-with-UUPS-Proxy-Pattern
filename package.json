@@ -11,8 +11,10 @@
     "upgrade:v3": "hardhat run scripts/upgrade-to-v3.js"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.5"
+    "hardhat": "^2.22.5",
+    "solidity-coverage": "^0.8.17"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.1",

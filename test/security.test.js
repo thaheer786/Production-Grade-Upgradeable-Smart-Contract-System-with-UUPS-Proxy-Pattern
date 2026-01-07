@@ -3,6 +3,9 @@ const { ethers, upgrades } = require("hardhat");
 const fs = require("fs");
 const path = require("path");
 
+// Import chai matchers manually
+require("@nomicfoundation/hardhat-chai-matchers");
+
 describe("Security", function () {
   it("should prevent direct initialization of implementation contracts", async function () {
     const [admin] = await ethers.getSigners();

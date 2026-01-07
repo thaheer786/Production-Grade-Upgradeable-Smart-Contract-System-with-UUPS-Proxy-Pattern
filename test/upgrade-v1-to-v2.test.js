@@ -1,6 +1,9 @@
 const { expect } = require("chai");
 const { ethers, upgrades } = require("hardhat");
 
+// Import chai matchers manually
+require("@nomicfoundation/hardhat-chai-matchers");
+
 describe("Upgrade V1 to V2", function () {
   let token, vault, admin, user, other;
 
@@ -65,7 +68,7 @@ describe("Upgrade V1 to V2", function () {
     await token.mint(await vault.getAddress(), expectedYield);
 
     const preview = await vault.getUserYield(user.address);
-    expect(preview).to.closeTo(expectedYield, ethers.parseEther("1"));
+    expect(preview).to.be.closeTo(expectedYield, ethers.parseEther("1"));
 
     const claimed = await vault.connect(user).claimYield();
     const rcpt = await claimed.wait();

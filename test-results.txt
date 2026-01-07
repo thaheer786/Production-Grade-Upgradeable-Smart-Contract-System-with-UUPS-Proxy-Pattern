@@ -1,11 +1,11 @@
 
 
   Security
-    ✔ should prevent direct initialization of implementation contracts (543ms)
-    ✔ should prevent unauthorized upgrades (304ms)
+    ✔ should prevent direct initialization of implementation contracts (1234ms)
+    ✔ should prevent unauthorized upgrades (399ms)
     ✔ should use storage gaps for future upgrades
-    ✔ should not have storage layout collisions across versions (110ms)
-    ✔ should prevent function selector clashing (49ms)
+    ✔ should not have storage layout collisions across versions (246ms)
+    ✔ should prevent function selector clashing (69ms)
 
   TokenVaultV1
     ✔ should initialize with correct parameters
@@ -33,5 +33,5 @@
     ✔ should prevent premature withdrawal execution
 
 
-  24 passing (2s)
+  24 passing (5s)
 
